@@ -33,6 +33,7 @@ class ProductAdmin(admin.ModelAdmin):     # 3rd
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
     pass
+
     # list_display = ['title', 'current_price', 'created_at', 'sale']
     # list_filter = ["created_at"]
     # search_fields = ['title']
