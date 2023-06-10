@@ -1,17 +1,9 @@
 from django.contrib import admin
-from .models import Product, Cart
+from .models import *
 
 
-# Register your models here.
 
-#
-# admin.site.register(Product) #1st
-#
-# class ProductAdmin(admin.ModelAdmin):
-#     pass
-#
-#
-# admin.site.register(Product, ProductAdmin)   #2nd
+
 
 @admin.action(description='Sale to 20')
 def make_published(modeladmin, request, queryset):
@@ -38,3 +30,12 @@ class CartAdmin(admin.ModelAdmin):
     # list_filter = ["created_at"]
     # search_fields = ['title']
     # actions = [make_published, sale_off]
+
+
+@admin.register(Department)
+class DepartmentAdmin(admin.ModelAdmin):
+    search_fields = ['title']
+
+@admin.register(Supermarket)
+class SupermarketAdmin(admin.ModelAdmin):
+    pass
